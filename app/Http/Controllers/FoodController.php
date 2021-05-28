@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Food;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class FoodController extends Controller
 {
@@ -11,7 +11,10 @@ class FoodController extends Controller
         return view('Foods');
     }
 
-
-
-
+    public function getFood() {
+        return response()->json([
+            'foods' => \App\Models\Food::all()
+        ], Response::HTTP_OK);
+    }
+    
 }

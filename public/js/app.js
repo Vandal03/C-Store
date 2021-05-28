@@ -1947,7 +1947,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/Foods').then(function (response) {
-        _this.Foods = response.data.Foods;
+        _this.Foods = response.data.foods;
       });
     }
   },

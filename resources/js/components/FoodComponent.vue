@@ -65,7 +65,7 @@
             getFood(){
                 axios.get('/Foods')
                      .then((response)=>{
-                       this.Foods = response.data
+                       this.Foods = response.data.foods
                      })
             }
         },

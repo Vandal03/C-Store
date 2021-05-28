@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Use App\Http\Controllers\FoodController;
 Route::get('/Food', [FoodController::class, 'index']);
-
+Route::get('/Foods', [FoodController::class, 'getFood']);
