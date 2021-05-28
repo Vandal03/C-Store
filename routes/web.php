@@ -18,10 +18,9 @@ Route::get('/', function () {
 });
 
 Use App\Http\Controllers\FoodController;
-Route::get('/Foods', function (){
-    return view('Foods');
-});
-
-Route::get('/index', [FoodController::class, 'index']);
-Route::delete('/deletefood', [FoodController::class, 'delete']);
+// Route::get('/Foods', function (){
+//     return view('Foods');
+// });
+Route::get('/Foods', [FoodController::class, 'getFoodItems']);
+Route::get('/deletefood/{id}', [FoodController::class, 'delete']);
 

@@ -1928,12 +1928,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
-    return {
-      Foods: {}
-    };
+    return {};
   },
+  props: ['foods'],
   methods: {
     calculateProfit: function calculateProfit(Food) {
       var profit = Food.retail - Food.cost;
@@ -1942,23 +1944,16 @@ __webpack_require__.r(__webpack_exports__);
     calculateMargin: function calculateMargin(Food) {
       var margin = (Food.retail - Food.cost) / Food.retail * 100;
       return margin.toFixed(2);
-    },
-    index: function index() {
-      var _this = this;
+    } // getFoodItems(){
+    //     axios.get('/getFoodItems')
+    //          .then((response)=>{
+    //            this.Foods = response.data.foods
+    //          })
+    // },
 
-      axios.get('/index').then(function (response) {
-        _this.Foods = response.data.foods;
-      });
-    },
-    deleteFood: function deleteFood(id) {
-      axios["delete"]('/deletefood', {
-        id: id
-      }).then();
-    }
   },
   created: function created() {
-    console.log('Component mounted.');
-    this.index();
+    console.log('Component mounted.'); // this.getFoodItems()
   }
 });
 
@@ -37637,7 +37632,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container mt-4" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-10" }, [
         _c(
@@ -37646,7 +37641,7 @@ var render = function() {
           [
             _vm._m(0),
             _vm._v(" "),
-            _vm._l(_vm.Foods, function(Food) {
+            _vm._l(_vm.foods, function(Food) {
               return _c("div", { key: Food.id, staticClass: "card-body" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-sm-12" }, [
@@ -37704,15 +37699,10 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c(
-                      "button",
+                      "a",
                       {
                         staticClass: "btn btn-danger",
-                        attrs: { type: "submit" },
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteFood(Food.id)
-                          }
-                        }
+                        attrs: { href: "/deletefood/" + Food.id }
                       },
                       [_vm._v("Delete")]
                     )
@@ -37724,7 +37714,11 @@ var render = function() {
             })
           ],
           2
-        )
+        ),
+        _vm._v(" "),
+        _c("a", { staticClass: "btn btn-warning mt-2", attrs: { href: "/" } }, [
+          _vm._v("Back")
+        ])
       ])
     ])
   ])

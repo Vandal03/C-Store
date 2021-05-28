@@ -3,7 +3,7 @@
 @section('Content')
 
     <div id="app">
-        <food-component></food-component>
+        <food-component :foods={{$foods}}></food-component>
     </div>
        
     
