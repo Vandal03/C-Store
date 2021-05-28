@@ -1943,17 +1943,22 @@ __webpack_require__.r(__webpack_exports__);
       var margin = (Food.retail - Food.cost) / Food.retail * 100;
       return margin.toFixed(2);
     },
-    getFood: function getFood() {
+    index: function index() {
       var _this = this;
 
-      axios.get('/Foods').then(function (response) {
+      axios.get('/index').then(function (response) {
         _this.Foods = response.data.foods;
       });
+    },
+    deleteFood: function deleteFood(id) {
+      axios["delete"]('/deletefood', {
+        id: id
+      }).then();
     }
   },
   created: function created() {
     console.log('Component mounted.');
-    this.getFood();
+    this.index();
   }
 });
 
@@ -37687,7 +37692,32 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(5, true),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v("Edit")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        attrs: { type: "submit" },
+                        on: {
+                          click: function($event) {
+                            return _vm.deleteFood(Food.id)
+                          }
+                        }
+                      },
+                      [_vm._v("Delete")]
+                    )
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("hr")
               ])
@@ -37731,26 +37761,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", [_c("strong", [_vm._v("Margin:")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Edit")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-danger", attrs: { type: "submit" } },
-          [_vm._v("Delete")]
-        )
-      ])
-    ])
   }
 ]
 render._withStripped = true

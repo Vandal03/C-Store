@@ -4,17 +4,23 @@ namespace App\Http\Controllers;
 use App\Food;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class FoodController extends Controller
 {
-    public function index() {
-        return view('Foods');
-    }
 
-    public function getFood() {
-        return response()->json([
-            'foods' => \App\Models\Food::all()
-        ], Response::HTTP_OK);
-    }
+   public function index() {
+       return response()->json([
+        'foods' => DB::table('food')->get()
+       ], Response::HTTP_OK);
+       
+   }
+
+   public function delete($id) {
+       return response()->json([
+           DB::table('food')->where('id', '=', $id)->delete()
+       ], Response::HTTP_OK);
+   }
+ 
     
 }

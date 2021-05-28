@@ -5,7 +5,7 @@
     <div class="container border border-secondary text-center w-25">
         <div class="row justify-content-center">
             <div class="col-sm-12 m-4">
-                <a href="/Food" class="text-decoration-none"><button class="btn btn-primary">Food Pricing Information</button></a>
+                <a href="/Foods" class="text-decoration-none"><button class="btn btn-primary">Food Pricing Information</button></a>
             </div>
         </div>
     </div>

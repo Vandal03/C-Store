@@ -19,6 +19,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('/foods', 'FoodController', [
-    'except' => ['edit', 'show', 'store']
-  ]);

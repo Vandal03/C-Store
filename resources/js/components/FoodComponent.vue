@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <button type="submit" class="btn btn-primary">Edit</button>
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" v-on:click='deleteFood(Food.id)'>Delete</button>
                             </div>
                         </div>
                         <hr>
@@ -62,16 +62,21 @@
                 let margin = (((Food.retail - Food.cost)/Food.retail)* 100);
                 return margin.toFixed(2);
             },
-            getFood(){
-                axios.get('/Foods')
+            index(){
+                axios.get('/index')
                      .then((response)=>{
                        this.Foods = response.data.foods
                      })
+            },
+            deleteFood(id){
+                axios.delete('/deletefood', { id: id }).then(
+                    
+                )
             }
         },
         created() {
             console.log('Component mounted.')
-            this.getFood()
+            this.index()
         }
     }
 </script>
