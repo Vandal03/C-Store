@@ -10,13 +10,6 @@ class FoodController extends Controller
 {
 
    public function getFoodItems() {
-    //    return response()->json([
-    //     'foods' => Food::all()
-    //    ], Response::HTTP_OK);
-
-    
-
-
        return view('Foods', [
            'foods' =>Food::all()
        ]);
@@ -28,6 +21,10 @@ class FoodController extends Controller
            return view('Foods', [
             'foods' =>Food::all()
         ]);
+   }
+
+   public function addFood($name, $cost, $retail) {
+
    }
  
     

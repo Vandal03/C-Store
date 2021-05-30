@@ -18,9 +18,10 @@ Route::get('/', function () {
 });
 
 Use App\Http\Controllers\FoodController;
-// Route::get('/Foods', function (){
-//     return view('Foods');
-// });
 Route::get('/Foods', [FoodController::class, 'getFoodItems']);
 Route::get('/deletefood/{id}', [FoodController::class, 'delete']);
 
+
+Use App\Http\Controllers\VendorsController;
+Route::get('/vendors', [VendorsController::class, 'getAllVendors']);
+Route::get('/deletevendor/{id}', [VendorsController::class, 'deleteVendor']);

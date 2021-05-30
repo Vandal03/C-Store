@@ -2,9 +2,20 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-10">
+                <a class="dropdown-item" href="/"><i class="btn btn-warning fa fa-chevron-left"></i></a>
                 <div class="card">
-                    <div class="card-header text-center">
-                        <h1>Junction Food List</h1>
+                    <div class="card-header">
+                        <div class="dropdown text-right">
+                            <button class="dropdown-toggle btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Add Food Item<i class="pl-1 fa fa-plus"></i></a>
+                                <a href="/vendors" class="dropdown-item">Vendors <i class="pl-1 fa fa-users"></i></a>
+                                <a href="#" class="dropdown-item">Ingredients <i class="fa fa-cutlery"></i></a>
+                            </div>
+                        </div>
+                        <h1 class="text-center">Junction Food List</h1>
                     </div>
                     <div v-for="Food in foods" :key="Food.id" class="card-body">
                         <div class="row">
@@ -43,40 +54,32 @@
                     </div>
                     
                 </div>
-                <a class="btn btn-warning mt-2" href="/">Back</a>
+                
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                
-            }
-        },
-        props: [ 'foods'],
-        methods: {
-            calculateProfit(Food){
-                let profit = Food.retail - Food.cost;
-                return  profit;
-            },
-            calculateMargin(Food){
-                let margin = (((Food.retail - Food.cost)/Food.retail)* 100);
-                return margin.toFixed(2);
-            },
-            // getFoodItems(){
-            //     axios.get('/getFoodItems')
-            //          .then((response)=>{
-            //            this.Foods = response.data.foods
-            //          })
-            // },
-            
-        },
-        created() {
-            console.log('Component mounted.')
-            // this.getFoodItems()
-        }
-    }
+export default {
+  data() {
+    return {};
+  },
+  props: ["foods"],
+  methods: {
+    calculateProfit(Food) {
+      let profit = Food.retail - Food.cost;
+      return profit;
+    },
+    calculateMargin(Food) {
+      let margin = ((Food.retail - Food.cost) / Food.retail) * 100;
+      return margin.toFixed(2);
+    },
+    
+  },
+  created() {
+    console.log("Component mounted.");
+    // this.getFoodItems()
+  },
+};
 </script>
