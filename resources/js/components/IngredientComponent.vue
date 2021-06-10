@@ -11,33 +11,42 @@
                                 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="/vendors/addvendor">Add Vendor<i class="pl-1 fa fa-plus"></i></a>
+                                <a class="dropdown-item" href="/ingredients/addingredient">Add Ingredient <i class="fa fa-cutlery"></i></a>
                             </div>
                         </div>
-                        <h1 class="text-center">Junction Vendor List</h1>
+                        <h1 class="text-center">Junction Ingredient List</h1>
                     </div>
-                    <div v-for="vendor in vendors" :key="vendor.id" class="card-body">
+                    <div v-for="ingredient in ingredients" :key="ingredient.id" class="card-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4>{{ vendor.company }}</h4>
+                                <h4>{{ ingredient.name }}</h4>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12 d-flex mb-5">
                                 <div class="col-sm-6">
-                                    <label><strong>Point of Contact: </strong></label>
-                                    <p class="d-inline"> {{ vendor.poc }}</p>
+                                    <label><strong>Unit Cost: </strong></label>
+                                    <p class="d-inline"> {{ '$' + ingredient.unitcost }}</p>
                                 </div>
                                  <div class="col-sm-6">
-                                    <label><strong>Phone Number: </strong></label>
-                                    <p class="d-inline"> {{ vendor.phonenumber }}</p>
+                                    <label><strong>Cost per Oz: </strong></label>
+                                    <p class="d-inline"> {{ "$" + calculateCostPerOz(ingredient) }}</p>
                                 </div>
+                                
                             </div>
+                        
                         </div>
                         <div class="row">
+                            <div class="col-sm-6 ml-3">
+                                     <label><strong>Unit Weight: </strong></label>
+                                    <p class="d-inline"> {{ ingredient.unitweight + ' ' + ingredient.unit_of_measure}}</p>
+                                </div>
+                               
+                        </div>
+                        <div class="row mt-4">
                             <div class="col-sm-12">
-                                <a  class="btn btn-primary" :href="'/vendors/editvendor/' + vendor.id">Edit</a>
-                                <a class="btn btn-danger" :href="'/deletevendor/'+ vendor.id">Delete</a>
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                                <a class="btn btn-danger" :href="'/ingredients/deleteingredient/'+ ingredient.id">Delete</a>
                             </div>
                         </div>
                         <hr>
@@ -53,8 +62,12 @@ export default {
   data() {
     return {};
   },
-  props: ["vendors"],
+  props: ["ingredients"],
   methods: {
+      calculateCostPerOz(ingredient) {
+          let costPerOz = ingredient.unitcost / ingredient.unitweight;
+          return costPerOz;
+      }
     
   },
   created() {

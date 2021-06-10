@@ -2,9 +2,11 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <a class="dropdown-item" href="/"><i class="btn btn-warning fa fa-chevron-left"></i></a>
-                <div class="card">
+                <a href="/"><i class="btn btn-warning fa fa-chevron-left d-inline"></i></a>
+                
+                <div class="card mt-4">
                     <div class="card-header">
+                        
                         <div class="dropdown text-right">
                             <button class="dropdown-toggle btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 
@@ -12,7 +14,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="#">Add Food Item<i class="pl-1 fa fa-plus"></i></a>
                                 <a href="/vendors" class="dropdown-item">Vendors <i class="pl-1 fa fa-users"></i></a>
-                                <a href="#" class="dropdown-item">Ingredients <i class="fa fa-cutlery"></i></a>
+                                <a href="/ingredients" class="dropdown-item">Ingredients <i class="fa fa-cutlery"></i></a>
                             </div>
                         </div>
                         <h1 class="text-center">Junction Food List</h1>

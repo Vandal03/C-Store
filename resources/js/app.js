@@ -22,7 +22,10 @@ window.Vue = require('vue').default;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('food-component', require('./components/FoodComponent.vue').default);
 Vue.component('vendor-component', require('./components/VendorComponent.vue').default);
-
+Vue.component('add-vendor-component', require('./components/AddVendorComponent.vue').default);
+Vue.component('ingredient-component', require('./components/IngredientComponent.vue').default);
+Vue.component('add-ingredient-component', require('./components/AddIngredient.vue').default);
+Vue.component('edit-vendor-component', require('./components/EditVendorComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
