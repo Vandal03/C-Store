@@ -11,9 +11,9 @@ class Ingredients extends Model
 
     protected $fillable = [
         'name',
-        'unitcost',
-        'unitweight',
-        'unit_of_measure',
+        'description',
+        'unit_cost',
+        'unit_weight_oz',
         'vendor_id'
     ];
 }

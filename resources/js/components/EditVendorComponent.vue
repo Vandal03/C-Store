@@ -2,7 +2,7 @@
        <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <h1 class="text-center">Edit Vendor</h1>
+                <h1 class="text-center mt-4">Edit Vendor</h1>
             </div>
         </div>
             <div class="row justify-content-center">
@@ -11,17 +11,20 @@
                         <input type="hidden" name="_token" :value="csrfToken" />
                         <div class="form-group">
                             <label class="mt-3" for="vendorName">Vendor Name</label>
-                            <input type="text" required class="form-control" name="vendorName" id="vendorName" :value='vendor.company' aria-describedby="vendor" >
+                            <input type="text" required class="form-control" name="vendorName" id="vendorName" :value='vendor.vendor' aria-describedby="vendorName" >
                         </div>
                         <div class="form-group">
-                            <label for="pocName">Point of Contact</label>
-                            <input type="text"  class="form-control" name="pocName" id="pocName" aria-describedby="poc" :value='vendor.poc'>
+                            <label for="pointOfContact">Point of Contact</label>
+                            <input type="text"  class="form-control" name="pointOfContact" id="pointOfContact" aria-describedby="pointOfContact" :value='vendor.point_of_contact'>
                         </div>
                         <div class="form-group">
                             <label for="phoneNumber">Phone Number</label>
-                            <input type="number"  class="form-control" name="phoneNumber" id="phoneNumber" aria-describedby="phone" :value='vendor.phonenumber'>
+                            <input type="number"  class="form-control" name="phoneNumber" id="phoneNumber" aria-describedby="phoneNumber" :value='vendor.phone_number'>
                         </div>
-                        <button type="submit" value="submit" class="btn btn-success mb-4">Save</button>
+                        <div class="mb-4 text-center">
+                            <button type="submit" value="submit" class="btn btn-success">Save</button>
+                            <a class="btn btn-warning text-white"  href="/vendors">Cancel</a>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -19,18 +19,18 @@
                     <div v-for="vendor in vendors" :key="vendor.id" class="card-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4>{{ vendor.company }}</h4>
+                                <h4>{{ vendor.vendor}}</h4>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12 d-flex mb-5">
                                 <div class="col-sm-6">
                                     <label><strong>Point of Contact: </strong></label>
-                                    <p class="d-inline"> {{ vendor.poc }}</p>
+                                    <p class="d-inline"> {{ vendor.point_of_contact }}</p>
                                 </div>
                                  <div class="col-sm-6">
                                     <label><strong>Phone Number: </strong></label>
-                                    <p class="d-inline"> {{ vendor.phonenumber }}</p>
+                                    <p class="d-inline"> {{ vendor.phone_number }}</p>
                                 </div>
                             </div>
                         </div>

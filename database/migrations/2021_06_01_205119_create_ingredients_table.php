@@ -16,9 +16,9 @@ class CreateIngredientsTable extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->text('name');
-            $table->decimal('unitcost');
-            $table->decimal('unitweight');
-            $table->text('unit_of_measure');
+            $table->text('description')->nullable();
+            $table->decimal('unit_cost');
+            $table->decimal('unit_weight_oz');
             $table->foreignId('vendor_id');
             $table->timestamps();
         });

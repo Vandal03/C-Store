@@ -20,15 +20,15 @@ class VendorsController extends Controller
         ]);
     }
 
-    public function addVendor() {
+    public function addVendorForm() {
         return view('AddVendor', [
 
         ]);
     }
 
-    public function add(Request $request) {
+    public function addVendor(Request $request) {
 
-        Vendors::create(['company'=> $request->get("vendorName"), 'poc' => $request->get("pocName"), 'phonenumber' => $request->get("phoneNumber")]);
+        Vendors::create(['vendor'=> $request->get("vendorName"), 'point_of_contact' => $request->get("pointOfContact"), 'phone_number' => $request->get("phoneNumber")]);
         return view('Vendors', [
             'vendors' => Vendors::all()
         ]);
@@ -38,14 +38,14 @@ class VendorsController extends Controller
         return $this->hasMany(Ingredients::class);
     }
 
-    public function editForm($id) {
+    public function editVendorForm($id) {
         return view('EditVendor', [
             'vendor' => Vendors::where('id', '=', $id)->first()
         ]);
     }
 
-    public function edit(Request $request, $id) {
-        Vendors::where('id', '=', $id)->update(['company'=> $request->get("vendorName"), 'poc' => $request->get("pocName"), 'phonenumber' => $request->get("phoneNumber")]);
+    public function editVendor(Request $request, $id) {
+        Vendors::where('id', '=', $id)->update(['vendor'=> $request->get("vendorName"), 'point_of_contact' => $request->get("pointOfContact"), 'phone_number' => $request->get("phoneNumber")]);
         return view('Vendors', [
             'vendors' => Vendors::all()
         ]);
