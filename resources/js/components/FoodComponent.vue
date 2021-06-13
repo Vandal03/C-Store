@@ -12,7 +12,7 @@
                                 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Add Food Item<i class="pl-1 fa fa-plus"></i></a>
+                                <a class="dropdown-item" href="/foods/addfood">Add Food Item<i class="pl-1 fa fa-plus"></i></a>
                                 <a href="/vendors" class="dropdown-item">Vendors <i class="pl-1 fa fa-users"></i></a>
                                 <a href="/ingredients" class="dropdown-item">Ingredients <i class="fa fa-cutlery"></i></a>
                             </div>

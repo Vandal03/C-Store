@@ -18,8 +18,9 @@ Route::get('/', function () {
 });
 
 Use App\Http\Controllers\FoodController;
-Route::get('/Foods', [FoodController::class, 'getFoodItems']);
+Route::get('/foods', [FoodController::class, 'getFoodItems']);
 Route::get('/deletefood/{id}', [FoodController::class, 'delete']);
+Route::get('/foods/addfood', [FoodController::class, 'addFoodForm']);
 
 
 Use App\Http\Controllers\VendorsController;

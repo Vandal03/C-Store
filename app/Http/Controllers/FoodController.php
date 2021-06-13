@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Food;
+use App\Models\Ingredients;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -23,7 +24,16 @@ class FoodController extends Controller
         ]);
    }
 
-   public function addFood($name, $cost, $retail) {
+   public function addFoodForm() {
+       return view('AddFood', [
+        'ingredients' => Ingredients::join('vendors', 'ingredients.vendor_id', '=', 'vendors.id')
+                                        ->select('ingredients.*', 'vendors.vendor')
+                                        ->get()
+       ]);
+   }
+
+
+   public function addFood($request) {
 
    }
  

@@ -2,7 +2,7 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                 <a  href="/Foods"><i class="btn btn-warning fa fa-chevron-left"></i></a>
+                 <a  href="/foods"><i class="btn btn-warning fa fa-chevron-left"></i></a>
                 <div class="card mt-4">
                     <div class="card-header">
                        

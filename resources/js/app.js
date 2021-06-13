@@ -21,6 +21,7 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('food-component', require('./components/FoodComponent.vue').default);
+Vue.component('add-food-component', require('./components/AddFoodComponent.vue').default);
 Vue.component('vendor-component', require('./components/VendorComponent.vue').default);
 Vue.component('add-vendor-component', require('./components/AddVendorComponent.vue').default);
 Vue.component('ingredient-component', require('./components/IngredientComponent.vue').default);
